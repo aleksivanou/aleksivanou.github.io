@@ -61,7 +61,7 @@ body {
 		Helvetica,
 		Arial,
 		sans-serif;
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 	line-height: 1.55;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -506,7 +506,7 @@ svg {
 .prose {
 	margin: 0;
 	color: var(--muted);
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 }
 .prose + .prose {
 	margin-top: 0.75rem;
@@ -541,7 +541,7 @@ svg {
 }
 .service-title {
 	margin: 0;
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 	font-weight: 600;
 }
 .service-description {
@@ -850,7 +850,7 @@ svg {
 	.mobile-topbar-name {
 		margin: 0;
 		overflow: hidden;
-		font-size: 0.875rem;
+		font-size: 0.85rem;
 		font-weight: 600;
 		letter-spacing: -0.02em;
 		text-overflow: ellipsis;
@@ -1022,7 +1022,7 @@ svg {
 }
 .timeline-title {
 	margin: 0;
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 	font-weight: 600;
 }
 .timeline-place {
@@ -1263,7 +1263,7 @@ svg {
 .extensions-subtitle {
 	margin: 0.25rem 0 0;
 	color: var(--muted);
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 }
 .extensions-more {
 	display: inline-flex;
@@ -1332,7 +1332,7 @@ svg {
 	object-fit: cover;
 }
 .extension-icon-fallback {
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 	font-weight: 600;
 }
 .extension-title {
@@ -1659,14 +1659,14 @@ svg {
 }
 .site-preview-title {
 	margin: 0;
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 	font-weight: 600;
 	letter-spacing: -0.01em;
 }
 .site-preview-text {
 	margin: 0.5rem 0 0;
 	color: rgb(255 255 255 / 76%);
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 	opacity: 0;
 	transition: opacity 220ms ease 80ms;
 }
@@ -1721,7 +1721,7 @@ svg {
 	font-size: 0.75rem;
 }
 .desc-card .contact-description {
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 }
 .contact-button {
 	display: inline-flex;
