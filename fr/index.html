@@ -1,0 +1,2573 @@
+<!doctype html>
+<html lang="fr" class="nojs">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>
+			Aliaksandr Ivanou (@aleksivanou) ⚡ développeur Web créatif
+			fullstack
+		</title>
+		<meta
+			name="description"
+			content="Site personnel de Aleks Ivanou. Création d'applications et de packages Web modernes et performants. Développement Web professionnel personnalisé. Fondateur de MyelophOne. Contactez-moi !"
+		/>
+
+		<style>
+			.nojs svg {
+				max-width: 1rem;
+			}
+			.nojs .mobile-topbar,
+			.nojs #principleFlip {
+				display: none;
+			}
+			:root {
+				--layout-width: 57.5rem;
+				--sidebar-width: 13.75rem;
+				--content-width: 35rem;
+				--layout-gap: clamp(4.25rem, 8vw, 7rem);
+				--desktop-top: 2.5rem;
+				--border: #e7e7e7;
+			}
+			:root[data-theme="dark"] {
+				--border: #292929;
+			}
+			.profile {
+				position: fixed;
+				top: var(--desktop-top);
+				bottom: var(--desktop-top);
+				left: max(1.5rem, calc((100vw - var(--layout-width)) / 2));
+				z-index: 2;
+				display: flex;
+				width: var(--sidebar-width);
+				min-height: 0;
+				overflow-x: hidden;
+				overflow-y: auto;
+				overscroll-behavior-y: contain;
+				scrollbar-width: thin;
+				flex-direction: column;
+				padding-right: 0.25rem;
+			}
+			.content {
+				width: min(var(--content-width), calc(100% - 3rem));
+				margin-left: max(
+					calc(1.5rem + var(--sidebar-width) + var(--layout-gap)),
+					calc(
+						(100vw - var(--layout-width)) / 2 +
+							var(--sidebar-width) + var(--layout-gap)
+					)
+				);
+				padding-top: var(--desktop-top);
+				padding-bottom: 5rem;
+			}
+			@media (max-width: 51.25rem) {
+				.profile {
+					position: relative;
+					top: auto;
+					bottom: auto;
+					left: auto;
+					width: min(calc(100% - 2rem), 38.75rem);
+					min-height: 100dvh;
+					max-height: none;
+					margin: 0 auto;
+					overflow: visible;
+					padding: 1.5rem 0
+						calc(1.125rem + env(safe-area-inset-bottom));
+					align-items: center;
+				}
+				.content {
+					width: min(calc(100% - 2rem), 38.75rem);
+					margin: 0 auto;
+					padding: 3.5rem 0 0;
+					border-top: 0.0625rem solid var(--border);
+				}
+			}
+			@media (max-width: 32.5rem) {
+				.profile,
+				.content {
+					width: min(calc(100% - 1.75rem), 38.75rem);
+				}
+				.content {
+					padding-top: 2.75rem;
+				}
+			}
+			@media (max-height: 43.75rem) and (min-width: 51.3125rem) {
+				.profile {
+					top: 1.25rem;
+					bottom: 1.25rem;
+				}
+				.content {
+					padding-top: 1.25rem;
+				}
+			}
+			@media print {
+				.profile {
+					position: static;
+					float: left;
+					width: 11.25rem;
+					height: auto;
+					overflow: visible;
+					margin-right: 1.75rem;
+					padding: 0;
+				}
+				.content {
+					width: auto;
+					margin: 0;
+					padding: 0;
+				}
+			}
+			html,
+			body {
+				max-width: 100% !important;
+				margin: 0;
+			}
+			body {
+				font-family:
+					-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+					Roboto, Oxygen, Ubuntu, sans-serif, color-emoji;
+				background-color: #fff;
+				color: #555;
+				font-weight: 400;
+				overflow-x: hidden !important;
+			}
+			img {
+				max-width: 100% !important;
+				height: auto;
+				display: block;
+			}
+		</style>
+
+		<meta
+			name="keywords"
+			content="Aliaksandr Ivanou, Aleks Ivanou, aleksivanou, développeur frontend, développeur web, propriétaire de MyelophOne"
+		/>
+		<meta name="author" content="Aliaksandr Ivanou" />
+		<meta name="robots" content="index, follow" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#fafafa" id="themeColor" />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+		<meta
+			name="format-detection"
+			content="telephone=no, address=no, email=no"
+		/>
+		<meta http-equiv="x-dns-prefetch-control" content="on" />
+
+		<link rel="canonical" href="https://aleksivanov.me/fr/" />
+		<link rel="alternate" hreflang="ru" href="https://aleksivanov.me/ru/" />
+		<link rel="alternate" hreflang="pl" href="https://aleksivanov.me/pl/" />
+		<link rel="alternate" hreflang="de" href="https://aleksivanov.me/de/" />
+		<link rel="alternate" hreflang="it" href="https://aleksivanov.me/it/" />
+		<link rel="alternate" hreflang="fr" href="https://aleksivanov.me/fr/" />
+		<link rel="alternate" hreflang="es" href="https://aleksivanov.me/es/" />
+		<link rel="alternate" hreflang="pt" href="https://aleksivanov.me/pt/" />
+		<link rel="alternate" hreflang="ja" href="https://aleksivanov.me/ja/" />
+		<link rel="alternate" hreflang="en" href="https://aleksivanov.me/" />
+		<link
+			rel="alternate"
+			hreflang="x-default"
+			href="https://aleksivanov.me/"
+		/>
+
+		<link
+			rel="preload"
+			as="image"
+			href="/assets/img/portrait-bashful-right-up.jpg"
+			fetchpriority="low"
+		/>
+
+		<meta property="og:type" content="profile" />
+		<meta property="og:locale" content="fr_FR" />
+		<meta
+			property="og:site_name"
+			content="Aliaksandr Ivanou (@aleksivanou) ⚡ développeur Web créatif fullstack"
+		/>
+		<meta
+			property="og:title"
+			content="Aliaksandr Ivanou (@aleksivanou) ⚡ développeur Web créatif fullstack"
+		/>
+		<meta
+			property="og:description"
+			content="Site personnel de Aleks Ivanou. Création d'applications et de packages Web modernes et performants. Développement Web professionnel personnalisé. Fondateur de MyelophOne. Contactez-moi !"
+		/>
+		<meta property="og:url" content="https://aleksivanov.me/fr/" />
+		<meta
+			property="og:image"
+			content="https://aleksivanov.me/assets/img/social-cover.png"
+		/>
+		<meta
+			property="og:image:alt"
+			content="Aliaksandr Ivanou (@aleksivanou) ⚡ développeur Web créatif fullstack"
+		/>
+		<meta property="profile:first_name" content="Aleks" />
+		<meta property="profile:last_name" content="Ivanou" />
+		<meta property="profile:username" content="aleksivanou" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Aliaksandr Ivanou (@aleksivanou) ⚡ développeur Web créatif fullstack"
+		/>
+		<meta
+			name="twitter:description"
+			content="Site personnel de Aleks Ivanou. Création d'applications et de packages Web modernes et performants. Développement Web professionnel personnalisé. Fondateur de MyelophOne. Contactez-moi !"
+		/>
+		<meta
+			name="twitter:image"
+			content="https://aleksivanov.me/assets/img/social-cover.png"
+		/>
+
+		<link rel="schema.DC" href="http://purl.org/DC/elements/1.1/" />
+		<meta
+			name="DC.Title"
+			content="Aliaksandr Ivanou (@aleksivanou) ⚡ développeur Web créatif fullstack"
+		/>
+		<meta
+			name="DC.Subject"
+			content="Aliaksandr Ivanou (@aleksivanou) ⚡ développeur Web créatif fullstack"
+		/>
+		<meta
+			name="DC.Description"
+			content="Site personnel de Aleks Ivanou. Création d'applications et de packages Web modernes et performants. Développement Web professionnel personnalisé. Fondateur de MyelophOne. Contactez-moi !"
+		/>
+		<meta name="DC.Contributor" content="https://aleksivanov.me" />
+		<meta name="DC.Date" content="2026-08-12" />
+		<meta name="DC.Identifier" content="https://aleksivanov.me" />
+		<meta name="DC.Publisher.url" content="https://aleksivanov.me" />
+		<meta name="DC.Type" content="Text" />
+		<meta name="DC.Format" content="text/html" />
+		<meta name="DC.Language" content="fr_FR" />
+		<meta name="DC.coverage" content="World" />
+
+		<link
+			rel="apple-touch-icon"
+			sizes="57x57"
+			href="/assets/favicon/apple-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="60x60"
+			href="/assets/favicon/apple-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="72x72"
+			href="/assets/favicon/apple-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="/assets/favicon/apple-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="/assets/favicon/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="/assets/favicon/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="/assets/favicon/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="/assets/favicon/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/assets/favicon/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="/assets/favicon/android-icon-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="/assets/favicon/favicon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/assets/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta
+			name="msapplication-TileImage"
+			content="/assets/favicon/ms-icon-144x144.png"
+		/>
+		<meta name="theme-color" content="#ffffff" />
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@context": "https://schema.org",
+						"@type": "Person",
+						"@id": "https://aleksivanov.me/#person",
+						"name": "Aliaksandr Ivanou",
+						"alternateName": "@aleksivanou",
+						"url": "https://aleksivanov.me/",
+						"image": "https://aleksivanov.me/assets/img/portrait-positive-calm.jpg",
+						"jobTitle": "développeur Web créatif fullstack",
+						"description": "Site personnel de Aleks Ivanou. Création d'applications et de packages Web modernes et performants. Développement Web professionnel personnalisé. Fondateur de MyelophOne. Contactez-moi !",
+						"email": "mailto:aleks@meph.one",
+						"sameAs": [
+							"https://github.com/aleksivanou",
+							"https://www.facebook.com/aleksivanov.me",
+							"https://www.instagram.com/aleksivanov.me/",
+							"https://www.youtube.com/@aleksivanou",
+							"https://x.com/aleksivanou",
+							"https://www.tiktok.com/@aleksivanov.me",
+							"https://www.linkedin.com/in/aleksivanou/",
+							"https://www.pinterest.com/aleksivanou/",
+							"https://www.reddit.com/user/aleksivanou",
+							"https://dribbble.com/aleksivanou",
+							"https://teletype.in/@aleksivanov.me",
+							"https://tenchat.ru/aleksivanou",
+							"https://vk.com/aleksivanou"
+						],
+						"founder": {
+							"@type": "Organization",
+							"name": "MyelophOne",
+							"url": "https://myeloph.one"
+						},
+						"knowsAbout": [
+							"Nuxt.js",
+							"React",
+							"Vue.js",
+							"CSS",
+							"SCSS",
+							"JavaScript",
+							"TypeScript",
+							"Node.js",
+							"Go",
+							"PostgreSQL",
+							"Frontend Development",
+							"Backend Development",
+							"Web Performance",
+							"Web Accessibility",
+							"Microservices Architecture",
+							"Responsive Web Design"
+						]
+					},
+					{
+						"@type": "Organization",
+						"@id": "https://myeloph.one/#organization",
+						"name": "MyelophOne",
+						"url": "https://myeloph.one",
+						"legalName": "Aliaksandr Ivanou",
+						"founder": {
+							"@id": "https://aleksivanov.me"
+						},
+						"brand": {
+							"@type": "Brand",
+							"name": "MyelophOne"
+						},
+						"alternateName": [
+							"MyelophOne",
+							"@MyelophOne",
+							"Myeloph.One",
+							"@Myeloph.One",
+							"MelophOne",
+							"Meloph.One",
+							"MephOne",
+							"Meph.One",
+							"Миелофон",
+							"МиелофонЪ",
+							"Aliaksandr Ivanou JDG"
+						]
+					},
+					{
+						"@context": "https://schema.org",
+						"@type": "WebSite",
+						"name": "MyelophOne",
+						"alternateName": [
+							"@aleksivanou",
+							"@aleksivanov.me",
+							"aleksivanov.me",
+							"Myelophone fondateur et propriétaire",
+							"Myeloph.One fondateur et propriétaire",
+							"Meph.One fondateur et propriétaire",
+							"Meloph.One fondateur et propriétaire"
+						],
+						"url": "https://aleksivanov.me/fr/",
+						"publisher": {
+							"@id": "https://aleksivanov.me/#person"
+						}
+					},
+					{
+						"@type": "FAQPage",
+						"@id": "https://aleksivanov.me/fr/#faq",
+						"mainEntity": [
+							{
+								"@type": "Question",
+								"name": "Qui est Aleks Ivanou ?",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "C'est moi :) Aleks Ivanou (@aleksivanou), le nom complet est Aliaksandr Ivanou (je viens de Biélorussie), un développeur Web full stack senior, avec une expertise dans la création de sites Web, de services Web et d'applications Web modernes, évolutifs et maintenables."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Pourquoi me choisir comme développeur ?",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Je rassemble l'expérience, la créativité et la solide technique de résolution de problèmes. Je construis un complexe, des solutions évolutives axées sur la performance, l'optimisation, la propreté de l'architecture et l'excellente expérience utilisateur."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Où est-ce que je travaille ?",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Je suis basé à Varsovie, en Pologne (UE), et travaille avec des clients du monde entier. Je collabore également à distance avec des entreprises, startups, projets B2B, et des équipes dans différents pays et les fuseaux horaires."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Aleks Ivanou — développeur web full-stack",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Je suis un développeur full-stack senior qui aime résoudre des problèmes complexes, défis techniques, démêlage architectures désordonnées et apportant des idées ambitieuses à la vie."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Aleks Ivanou — fondateur et propriétaire de la marque MyelophOne",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Fondateur et propriétaire de MyelophOne (@myeloph.one) - Web créatif développement axé sur le moderne sites Web, produits numériques et développement web personnalisé."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Aleks Ivanou — développeur d’extensions Chrome",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Je crée et développe Chrome extensions et outils de navigateur, de utilitaires de productivité légers vers des solutions personnalisées plus avancées (tels que OneClick New Window et Cookie Knight), disponibles dans le Chrome Web Store."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Aleks Ivanou — développeur d’extensions Firefox",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Je crée et développe du Firefox des extensions et outils multi-navigateurs personnalisés, y compris la productivité, l'automatisation, et des solutions utilitaires (telles que Cookie Knight), disponibles dans le Mozilla Add-ons Store."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Aleks Ivanou — développeur WordPress",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Je crée et développe sur mesure Plugins WordPress axés sur performances, SEO, automatisation et fonctionnalité pratique du site Web (tels que MyelophOne Core et MyelophOne SEO), disponible sur WordPress.org."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Aleks Ivanou — développeur de @myelophone/nuxt",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Je crée et développe du front-end composants et solution personnalisée en utilisant Nuxt.js, axé sur la performance, SEO et expérience utilisateur."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Aleks Ivanou — développeur de @myelophone/goserver",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Je crée et développe du service back-end et une solution personnalisée en utilisant Go, axé sur la performance, l'évolutivité et la sécurité."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Comment me contacter ?",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Vous pouvez me contacter directement via le formulaire de contact sur ce site Web ou par email. Envoyer une brève description de votre projet, de vos objectifs et type de collaboration préféré, et je te reviendrai avec les prochaines étapes."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Suis-je disponible pour une collaboration ?",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Oui. Je suis ouvert à ce qui est intéressant des projets et du long terme opportunités, sous réserve de mon état actuel d'engagements et tout ce qui est requis période de transition."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Suis-je disponible pour des missions à temps partiel ?",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Oui. Je suis ouvert à temps partiel engagements, projets en cours et des collaborations flexibles, en fonction sur mes engagements actuels."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Est-ce que je travaille en B2B ?",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Oui. Je travaille (en tant que polonais JDG) avec des entreprises et des clients sur une base B2B, y compris le travail basé sur des projets, un développement continu et des collaborations à long terme."
+								}
+							},
+							{
+								"@type": "Question",
+								"name": "Comment pouvons-nous travailler ensemble ?",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "Nous pouvons travailler ensemble sur un projet de base fixe, un package de développement, un engagement continu à temps partiel, ou une collaboration B2B à plus long terme, en fonction de vos besoins."
+								}
+							}
+						]
+					}
+				]
+			}
+		</script>
+
+		<script>
+			(() => {
+				const savedTheme = localStorage.getItem("theme");
+				const preferredTheme = window.matchMedia(
+					"(prefers-color-scheme: dark)",
+				).matches
+					? "dark"
+					: "light";
+
+				document.documentElement.dataset.theme =
+					savedTheme || preferredTheme;
+			})();
+		</script>
+
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+	</head>
+
+	<body id="page-top">
+		<header class="mobile-topbar" id="mobileTopbar">
+			<div class="mobile-topbar-copy">
+				<p class="mobile-topbar-name">Aliaksandr Ivanou</p>
+				<p class="mobile-topbar-principle">
+					Necessariam et Sufficientem
+				</p>
+			</div>
+
+			<div>
+				<a
+					class="mobile-topbar-link"
+					href="https://linkedin.com/in/aleksivanou"
+					target="_blank"
+					rel="me noopener noreferrer"
+					aria-label="LinkedIn"
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<rect x="4" y="9" width="3" height="11" rx="1" />
+						<circle cx="5.5" cy="5.5" r="1.5" />
+						<path
+							d="M11 20V9h3v1.8c1-1.5 2.3-2.2 4-2.2 2.7 0 4 1.8 4 5.1V20h-3v-5.7c0-1.9-.7-2.9-2.2-2.9-1.7 0-2.8 1.2-2.8 3.4V20h-3Z"
+						/>
+					</svg>
+				</a>
+
+				<a
+					class="mobile-topbar-link"
+					href="https://github.com/aleksivanou"
+					target="_blank"
+					rel="me noopener noreferrer"
+					aria-label="GitHub"
+				>
+					<svg viewBox="0 0 24 24" aria-hidden="true">
+						<path
+							d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7.4A5.8 5.8 0 0 0 19.3 3 5.4 5.4 0 0 0 19.1 0S17.9-.4 15 1.5a13.4 13.4 0 0 0-6 0C6.1-.4 4.9 0 4.9 0a5.4 5.4 0 0 0-.2 3A5.8 5.8 0 0 0 3.2 7.1c0 5.8 3.5 7 6.8 7.4A4.8 4.8 0 0 0 9 18v4"
+						/>
+						<path d="M9 19c-3 .9-3-1.5-4.2-2" />
+					</svg>
+				</a>
+			</div>
+		</header>
+		<a class="skip-link" href="#content">Go au contenu</a>
+
+		<aside class="profile" aria-label="Informations principales">
+			<div class="profile-main">
+				<div class="portrait-shake" id="portraitShake">
+					<div class="portrait">
+						<span
+							class="portrait-hit-flash"
+							aria-hidden="true"
+						></span>
+						<span class="portrait-fallback" aria-hidden="true"
+							>AI</span
+						>
+
+						<img
+							id="mainPortrait"
+							src="/assets/img/portrait-positive-calm.jpg"
+							data-default-src="/assets/img/portrait-positive-calm.jpg"
+							data-complete-src="/assets/img/portrait-bashful-right-up.jpg"
+							data-fight-images="/assets/img/portrait-bashful.jpg,/assets/img/portrait-curious.jpg,/assets/img/portrait-playful-skepticism.jpg,/assets/img/portrait-pleasant-surprise.jpg,/assets/img/portrait-bashful-right-up.jpg"
+							width="440"
+							height="550"
+							alt="Aliaksandr Ivanou (@aleksivanou) ⚡ MyelophOne fondateur et propriétaire"
+							loading="lazy"
+							decoding="async"
+							fetchpriority="low"
+							onerror="this.hidden = true"
+						/>
+					</div>
+				</div>
+
+				<div>
+					<h1 class="name">Aliaksandr Ivanou</h1>
+					<p class="role">
+						<b><i>Développeur Web passionné</i></b
+						><span class="typing-caret" aria-hidden="true"></span>
+					</p>
+					<p class="contact-description">
+						@aleksivanou - @aleksvanov.me
+					</p>
+				</div>
+
+				<p class="location">Varsovie, Pologne, UE</p>
+
+				<nav class="social-links" aria-label="Liens sociaux">
+					<a
+						class="social-link"
+						href="https://github.com/aleksivanou"
+						target="_blank"
+						rel="me noopener noreferrer"
+						aria-label="GitHub"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7.4A5.8 5.8 0 0 0 19.3 3 5.4 5.4 0 0 0 19.1 0S17.9-.4 15 1.5a13.4 13.4 0 0 0-6 0C6.1-.4 4.9 0 4.9 0a5.4 5.4 0 0 0-.2 3A5.8 5.8 0 0 0 3.2 7.1c0 5.8 3.5 7 6.8 7.4A4.8 4.8 0 0 0 9 18v4"
+							/>
+							<path d="M9 19c-3 .9-3-1.5-4.2-2" />
+						</svg>
+					</a>
+
+					<a
+						class="social-link"
+						href="https://linkedin.com/in/aleksivanou"
+						target="_blank"
+						rel="me noopener noreferrer"
+						aria-label="LinkedIn"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<rect x="4" y="9" width="3" height="11" rx="1" />
+							<circle cx="5.5" cy="5.5" r="1.5" />
+							<path
+								d="M11 20V9h3v1.8c1-1.5 2.3-2.2 4-2.2 2.7 0 4 1.8 4 5.1V20h-3v-5.7c0-1.9-.7-2.9-2.2-2.9-1.7 0-2.8 1.2-2.8 3.4V20h-3Z"
+							/>
+						</svg>
+					</a>
+
+					<a
+						class="social-link"
+						href="https://www.instagram.com/aleksivanov.me/"
+						target="_blank"
+						rel="me noopener noreferrer"
+						aria-label="Instagram"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<rect x="3" y="3" width="18" height="18" rx="5" />
+							<circle cx="12" cy="12" r="4" />
+							<circle
+								cx="17.5"
+								cy="6.5"
+								r=".8"
+								fill="currentColor"
+								stroke="none"
+							/>
+						</svg>
+					</a>
+
+					<a
+						class="social-link"
+						href="https://www.facebook.com/aleksivanov.me"
+						target="_blank"
+						rel="me noopener noreferrer"
+						aria-label="Facebook"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M14 21v-8h3l.5-3H14V8.2c0-1 .4-1.7 1.8-1.7H18V3.8c-.7-.1-1.5-.2-2.4-.2-2.8 0-4.6 1.7-4.6 4.8V10H8v3h3v8"
+							/>
+						</svg>
+					</a>
+
+					<a
+						class="social-link"
+						href="https://x.com/aleksivanou"
+						target="_blank"
+						rel="me noopener noreferrer"
+						aria-label="X.com"
+					>
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M5 4l14 16M19 4 5 20" />
+						</svg>
+					</a>
+				</nav>
+
+				<a class="contact-link" href="#contact-form-root"
+					>Contactez-moi</a
+				>
+			</div>
+
+			<div class="profile-footer">
+				<span class="availability">#OpenToWork</span>
+
+				<div
+					class="profile-controls"
+					aria-label="Paramètres de la page"
+				>
+					<button
+						class="theme-toggle"
+						id="themeToggle"
+						type="button"
+						aria-label="Basculer le thème"
+					></button>
+
+					<a
+						class="language-link"
+						href="/pl/"
+						hreflang="pl"
+						lang="pl"
+						aria-label="Wersja polska"
+						>PL</a
+					>
+
+					<a
+						class="language-link"
+						href="/ru/"
+						hreflang="ru"
+						lang="ru"
+						aria-label="Русская версия"
+						>RU</a
+					>
+				</div>
+			</div>
+		</aside>
+
+		<button
+			class="principle"
+			id="principleFlip"
+			type="button"
+			aria-label="Œuf de Pâques"
+		>
+			Necessariam et Sufficientem
+		</button>
+
+		<main class="content" id="content">
+			<section class="section" aria-labelledby="about-title">
+				<div
+					class="language-notice"
+					id="languageNotice"
+					data-nosnippet
+					aria-live="polite"
+				>
+					<span id="languageNoticeText"></span>
+					<a
+						class="language-notice-link"
+						id="languageNoticeLink"
+						href="/"
+						hreflang="en"
+						lang="en"
+						>EN</a
+					>
+				</div>
+
+				<h2 class="section-title" id="about-title">
+					Bonjour, je suis un développeur web passionné
+				</h2>
+
+				<p class="prose">
+					Bonjour, je suis<b>Aleks Ivanou</b>, un développeur Web full
+					stack senior avec plus de<span class="expyears">6</span>+
+					ans d'expérience professionnelle en développement Web, avec
+					une expertise dans la création de sites Web, de services Web
+					et d'applications Web modernes, évolutifs et maintenables.
+				</p>
+
+				<p class="prose">
+					Je développe et optimise des sites web, des applications
+					web, des systèmes backend, des interfaces frontend, APIs,
+					infrastructure, intégrations, automatismes, SEO/AEO. J'aime
+					les tâches personnalisées stimulantes !
+				</p>
+
+				<p class="prose">
+					Je m'engage à apprendre continuellement et à rester au
+					courant des dernières technologies, outils et meilleures
+					pratiques Web. J'aime explorer de nouvelles approches et
+					idées.
+				</p>
+
+				<p class="prose">
+					J'intègre les fonctionnalités de AI dans le cadre de
+					solutions Web modernes, là où elles apportent une réelle
+					valeur ajoutée, en mettant l'accent sur une intégration
+					réfléchie, des cas d'utilisation réels et un impact à long
+					terme.
+				</p>
+
+				<p class="prose">
+					Je préfère une architecture claire, des capacités de
+					plateforme natives et des solutions qui restent faciles à
+					prendre en charge. Ce site Web est construit conformément à
+					ces approches, vérifiez simplement par vous-même !
+				</p>
+
+				<div class="contact-card" style="margin-top: 2rem">
+					<div>
+						<h5 class="contact-title">
+							Vous avez un projet ou recherchez un développeur ?
+						</h5>
+						<p class="contact-description">
+							Partagez quelques lignes sur votre projet ou offre,
+							et je vous contacterai sous peu.
+						</p>
+					</div>
+
+					<a class="contact-button" href="#contact-form-root"
+						>Contactez-moi</a
+					>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="logos-title">
+				<h4 class="section-title" id="logos-title">
+					Ma stack technique et mes outils essentiels
+				</h4>
+
+				<div class="desc-card">
+					<p class="contact-description">
+						J'ai choisi des outils frontend et backend en fonction
+						de la stabilité, des performances et de l'efficacité
+						réelle et bien sûr de vos exigences. Ma configuration
+						full-stack repose sur des cadres éprouvés, des
+						plates-formes modernes et des solutions éprouvées
+						bibliothèques pour créer des applications rapides,
+						sécurisées et facilement évolutives sans encombrement
+						inutile.
+					</p>
+				</div>
+
+				<div class="story-card" id="storyCard">
+					<div class="story-content" id="storyContent">
+						<ul class="tag-list" aria-label="Technologies">
+							<li>Vue / Nuxt</li>
+							<li>Go</li>
+							<li>JavaScript / TypeScript</li>
+							<li>PHP / WordPress</li>
+							<li>WordPress Plugin &amp; Theme APIs</li>
+							<li>WebExtensions API / Manifest V3</li>
+							<li>Chrome / Firefox</li>
+							<li>PostgreSQL / Redis</li>
+							<li>NATS</li>
+							<li>Docker</li>
+							<li>.NET</li>
+							<li>CSS / Sass</li>
+							<li>Tailwind CSS</li>
+							<li>React</li>
+							<li>Preact</li>
+							<li>React Native</li>
+							<li>Java</li>
+							<li>Node.js / Express.js</li>
+							<li>Vite / PurgeCSS</li>
+							<li>Composer / PSR-7</li>
+							<li>Python</li>
+							<li>Git / GitHub Actions</li>
+							<li>MySQL / MongoDB</li>
+							<li>Azure</li>
+							<li>Jest / Vitest / Playwright</li>
+							<li>Sentry</li>
+							<li>Zustand</li>
+							<li>HTML5 / CSS3</li>
+						</ul>
+					</div>
+
+					<div class="story-footer">
+						<button
+							class="story-toggle"
+							id="storyToggle"
+							type="button"
+							aria-expanded="false"
+							aria-controls="storyContent"
+						>
+							<span>Afficher plus</span>
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="websites-title">
+				<div class="extensions-head">
+					<div>
+						<h4 class="extensions-heading" id="websites-title">
+							Quelques sites web que j’ai réalisés
+						</h4>
+						<p class="extensions-subtitle">
+							Juste une petite fête ou des projets.
+						</p>
+					</div>
+				</div>
+
+				<div class="extensions-grid">
+					<a
+						class="extension-card"
+						href="https://cudostudio.pl/"
+						aria-label="Ouvrir le site cudostudio.pl par @aleksivanou"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/cudo.png"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>CUDO</span
+							>
+						</span>
+
+						<span>
+							<h6 class="extension-title">
+								CUDO : Studio de design d'intérieur
+							</h6>
+							<p class="extension-description">
+								Studio de design d'intérieur (Wroclaw) :
+								Restaurants, bureaux, espaces commerciaux
+							</p>
+							<span class="extension-meta"
+								>POLOGNE<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>cudostudio.pl</span
+							>
+						</span>
+					</a>
+
+					<a
+						class="extension-card"
+						href="https://cafegallerybrooklyn.com/"
+						aria-label="Ouvrir le site cafegallerybrooklyn.com par @aleksivanou"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/cafegallery.png"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>CG</span
+							>
+						</span>
+
+						<span>
+							<h6 class="extension-title">
+								Cafe Gallery Brooklyn
+							</h6>
+							<p class="extension-description">
+								Restaurant (New-York) pour prendre un repas,
+								célébrer un événement ou commander une livraison
+							</p>
+							<span class="extension-meta"
+								>États-Unis<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>cafegallerybrooklyn.com</span
+							>
+						</span>
+					</a>
+
+					<a
+						class="extension-card"
+						href="https://seafoodmatter.eu/"
+						aria-label="Ouvrir le site seafoodmatter.eu par @aleksivanou"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/seafoodmatter.png"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>SM</span
+							>
+						</span>
+
+						<span>
+							<h6 class="extension-title">
+								Seafoodmatter : Conseiller aux pêches
+							</h6>
+							<p class="extension-description">
+								Senior International Pêche et Aquaculture
+								conseiller international
+							</p>
+							<span class="extension-meta"
+								>PAYS-BAS<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>seafoodmatter.eu</span
+							>
+						</span>
+					</a>
+
+					<a
+						class="extension-card"
+						href="https://myelophone.eu/"
+						aria-label="Ouvrir le site myelophone.eu par @aleksivanou"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/myelophone.jpg"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>MON</span
+							>
+						</span>
+
+						<span>
+							<h6 class="extension-title">
+								Myelophone : studio web
+							</h6>
+							<p class="extension-description">
+								Studio web créatif : services de développement
+								web et de conception web.
+							</p>
+							<span class="extension-meta"
+								>POLOGNE<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>myelophone.eu</span
+							>
+						</span>
+					</a>
+
+					<a
+						class="extension-card"
+						href="https://hairboss.pl/"
+						aria-label="Ouvrir le site hairboss.pl par @aleksivanou"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/hairboss.jpg"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>HB</span
+							>
+						</span>
+
+						<span>
+							<h6 class="extension-title">
+								HairBoss : poils naturels
+							</h6>
+							<p class="extension-description">
+								Cheveux naturels en gros (Varsovie). Formations
+								et extensions de cheveux.
+							</p>
+							<span class="extension-meta"
+								>POLOGNE<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>hairboss.pl</span
+							>
+						</span>
+					</a>
+
+					<a
+						class="extension-card"
+						href="https://climertechnology.com/"
+						aria-label="Ouvrir le site climertechnology.com par @aleksivanou"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/climer.png"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>CT</span
+							>
+						</span>
+
+						<span>
+							<h6 class="extension-title">Climer Technology</h6>
+							<p class="extension-description">
+								Fabricant et fournisseur de pompes à chaleur.
+							</p>
+							<span class="extension-meta"
+								>SPAIN<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>climertechnology.com</span
+							>
+						</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="repos-title">
+				<div class="extensions-head">
+					<div>
+						<h3 class="extensions-heading" id="repos-title">
+							Exemples de mes dépôts publics
+						</h3>
+						<p class="extensions-subtitle">
+							Une grande partie de mes dépôts sont privées... Mais
+							vous pouvez en voir au moins des publics.
+						</p>
+					</div>
+
+					<a
+						class="extensions-more"
+						href="https://github.com/orgs/MyelophOne/repositories"
+						target="_blank"
+						>Plus</a
+					>
+				</div>
+
+				<div class="projects">
+					<a
+						class="project"
+						href="https://github.com/MyelophOne/nuxt"
+						aria-label="Ouvrir le projet Nuxt"
+						target="_blank"
+					>
+						<div class="project-header">
+							<h6 class="project-title">@myelophone/nuxt</h6>
+							<span class="project-arrow" aria-hidden="true"
+								>↗</span
+							>
+						</div>
+
+						<p class="project-description">
+							Module Nuxt 4 comme couche de base pour la
+							construction de candidatures Nuxt.
+						</p>
+
+						<div class="tags" aria-label="Technologies du projet">
+							<span class="tag">TypeScript</span>
+							<span class="tag">JavaScript</span>
+						</div>
+					</a>
+
+					<a
+						class="project"
+						href="https://github.com/MyelophOne/nuxt-template"
+						aria-label="Ouvrir le projet Nuxt Template"
+						target="_blank"
+					>
+						<div class="project-header">
+							<h6 class="project-title">
+								@myelophone/nuxt-template
+							</h6>
+							<span class="project-arrow" aria-hidden="true"
+								>↗</span
+							>
+						</div>
+
+						<p class="project-description">
+							Le modèle Nuxt 4 est un framework qui étend le
+							modèle Nuxt. 4 et est utilisé pour créer des
+							applications Nuxt.
+						</p>
+
+						<div class="tags" aria-label="Technologies du projet">
+							<span class="tag">TypeScript</span>
+							<span class="tag">JavaScript</span>
+						</div>
+					</a>
+
+					<a
+						class="project"
+						href="https://github.com/MyelophOne/goserver"
+						aria-label="Ouvrir le projet Goserver"
+						target="_blank"
+					>
+						<div class="project-header">
+							<h6 class="project-title">@myelophone/goserver</h6>
+							<span class="project-arrow" aria-hidden="true"
+								>↗</span
+							>
+						</div>
+
+						<p class="project-description">
+							Goserver est un serveur HTTP rapide et sécurisé basé
+							sur Go pour créer des applications back-end.
+						</p>
+
+						<div class="tags" aria-label="Technologies du projet">
+							<span class="tag">Go</span>
+						</div>
+					</a>
+
+					<a
+						class="project"
+						href="https://github.com/MyelophOne/goserver-template"
+						aria-label="Ouvrir le projet Goserver Template"
+						target="_blank"
+					>
+						<div class="project-header">
+							<h6 class="project-title">
+								@myelophone/goserver-template
+							</h6>
+							<span class="project-arrow" aria-hidden="true"
+								>↗</span
+							>
+						</div>
+
+						<p class="project-description">
+							Le modèle Goserver est un framework basé sur Go pour
+							créer des applications backend à l'aide du serveur
+							Go.
+						</p>
+
+						<div class="tags" aria-label="Technologies du projet">
+							<span class="tag">Go</span>
+						</div>
+					</a>
+
+					<a
+						class="project"
+						href="https://github.com/MyelophOne/vite-plugin-purgecss"
+						aria-label="Ouvrir vite-plugin-purgecss"
+						target="_blank"
+					>
+						<div class="project-header">
+							<h6 class="project-title">vite-plugin-purgecss</h6>
+							<span class="project-arrow" aria-hidden="true"
+								>↗</span
+							>
+						</div>
+
+						<p class="project-description">
+							Plugin Vite pour supprimer les CSS inutilisés des
+							fichiers générés bundles avec PurgeCSS.
+						</p>
+
+						<div class="tags" aria-label="Technologies du projet">
+							<span class="tag">TypeScript</span>
+							<span class="tag">JavaScript</span>
+							<span class="tag">Vite</span>
+						</div>
+					</a>
+
+					<a
+						class="project"
+						href="https://github.com/MyelophOne/cookies-psr7"
+						aria-label="Ouvrir cookies-psr7"
+						target="_blank"
+					>
+						<div class="project-header">
+							<h6 class="project-title">cookies-psr7</h6>
+							<span class="project-arrow" aria-hidden="true"
+								>↗</span
+							>
+						</div>
+
+						<p class="project-description">
+							PSR-7 CookieFactory, une classe qui facilite la
+							création des en-têtes Set-cookie.
+						</p>
+
+						<div class="tags" aria-label="Technologies du projet">
+							<span class="tag">PHP</span>
+						</div>
+					</a>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="wordpress-title">
+				<div class="extensions-head">
+					<div>
+						<h4 class="extensions-heading" id="wordpress-title">
+							Mes extensions WordPress
+						</h4>
+						<p class="extensions-subtitle">
+							Certains des plugins publics que j'ai créés
+						</p>
+					</div>
+
+					<a
+						class="extensions-more"
+						href="https://profiles.wordpress.org/myelophone/"
+						target="_blank"
+						>Plus</a
+					>
+				</div>
+
+				<div class="extensions-grid">
+					<a
+						class="extension-card"
+						href="https://wordpress.org/plugins/myelophone-core/"
+						aria-label="Ouvrir le plugin Myelophone Core"
+						target="_blank"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/myelophone.jpg"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>MC</span
+							>
+						</span>
+
+						<span>
+							<h3 class="extension-title">MyelophOne Core</h3>
+							<p class="extension-description">
+								Optimisation gratuite complète de WordPress et
+								plugin de gestion.
+							</p>
+							<span class="extension-meta"
+								>Productivité<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>WordPress</span
+							>
+						</span>
+					</a>
+
+					<a
+						class="extension-card"
+						href="https://wordpress.org/plugins/myelophone-seo/"
+						aria-label="Ouvrir le plugin MyelophOne SEO"
+						target="_blank"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/myelophone.jpg"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>SEP</span
+							>
+						</span>
+
+						<span>
+							<h6 class="extension-title">MyelophOne SEO</h6>
+							<p class="extension-description">
+								Extension SEO gratuite avec des fonctionnalités
+								uniques.
+							</p>
+							<span class="extension-meta"
+								>SEO<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>WordPress</span
+							>
+						</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="chrome-title">
+				<div class="extensions-head">
+					<div>
+						<h4 class="extensions-heading" id="chrome-title">
+							Mes extensions Chrome
+						</h4>
+						<p class="extensions-subtitle">
+							Certaines des extensions publiques que j'ai créées
+						</p>
+					</div>
+
+					<a
+						class="extensions-more"
+						href="https://chromewebstore.google.com/search/myelophone"
+						target="_blank"
+						>Plus</a
+					>
+				</div>
+
+				<div class="extensions-grid">
+					<a
+						class="extension-card"
+						href="https://chromewebstore.google.com/detail/cookie-knight/fkmebhjegpjgnjkakomeaakfokmjoglp"
+						aria-label="Ouvrir l’extension Cookie Knight"
+						target="_blank"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/cookie-knight.png"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>CK</span
+							>
+						</span>
+
+						<span>
+							<h3 class="extension-title">Cookie Knight</h3>
+							<p class="extension-description">
+								Manifest V3 Chrome extension pour le retrait des
+								cookies indésirables.
+							</p>
+							<span class="extension-meta"
+								>Confidentialité<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>Chrome</span
+							>
+						</span>
+					</a>
+
+					<a
+						class="extension-card"
+						href="https://chromewebstore.google.com/detail/oneclick-new-window/mbffihfapnjjoffpdpidblbchdkhkgjm"
+						aria-label="Ouvrir l’extension Oneclick New Window"
+						target="_blank"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/oneclick.png"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>NO</span
+							>
+						</span>
+
+						<span>
+							<h6 class="extension-title">OneClick New Window</h6>
+							<p class="extension-description">
+								Ouvre de nouvelles fenêtres du navigateur en un
+								seul clic.
+							</p>
+							<span class="extension-meta"
+								>Productivité<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>Chrome</span
+							>
+						</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="firefox-title">
+				<div class="extensions-head">
+					<div>
+						<h4 class="extensions-heading" id="firefox-title">
+							Mes extensions Firefox
+						</h4>
+						<p class="extensions-subtitle">
+							Certaines des extensions publiques que j'ai créées
+						</p>
+					</div>
+
+					<a
+						class="extensions-more"
+						href="https://addons.mozilla.org/ru/firefox/user/18872069/"
+						target="_blank"
+						>Plus</a
+					>
+				</div>
+
+				<div class="extensions-grid">
+					<a
+						class="extension-card"
+						href="https://addons.mozilla.org/firefox/addon/cookie-knight/"
+						aria-label="Ouvrir l’extension Cookie Knight"
+						target="_blank"
+					>
+						<span class="extension-icon">
+							<img
+								src="/assets/img/cookie-knight.png"
+								width="96"
+								height="96"
+								alt=""
+								loading="lazy"
+								decoding="async"
+								onerror="this.hidden = true"
+							/>
+							<span
+								class="extension-icon-fallback"
+								aria-hidden="true"
+								>CK</span
+							>
+						</span>
+
+						<span>
+							<h3 class="extension-title">Cookie Knight</h3>
+							<p class="extension-description">
+								Manifest V3 Firefox extension pour le retrait
+								des cookies indésirables.
+							</p>
+							<span class="extension-meta"
+								>Confidentialité<span
+									class="extension-meta-dot"
+									aria-hidden="true"
+								></span
+								>Firefox</span
+							>
+						</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="company-title">
+				<h3 class="section-title" id="company-title">
+					Je suis disponible pour une collaboration B2B.<br />Qualité
+					européenne, disponibilité mondiale
+				</h3>
+
+				<article class="company-card">
+					<a
+						class="company-logo"
+						href="https://github.com/myelophone"
+						target="_blank"
+						aria-label="Myeloph.One sur GitHub"
+					>
+						<img
+							src="/assets/img/myelophone.jpg"
+							width="128"
+							height="128"
+							alt="Myeloph.One"
+							loading="lazy"
+							decoding="async"
+						/>
+					</a>
+
+					<div>
+						<h3 class="company-name">
+							<a
+								href="https://github.com/myelophone"
+								target="_blank"
+								>Entreprise Aliaksandr Ivanou (marque
+								MyelophOne)</a
+							>
+						</h3>
+						<p class="company-type">
+							🇪🇺 Établi dans l’UE · Pologne
+						</p>
+
+						<p class="company-description">
+							Entreprise individuelle officiellement enregistrée
+							dans l’UE (JDG polonaise) et établie à Varsovie,
+							permettant des contrats B2B, une TVA et une
+							facturation transparentes, ainsi qu’une intégration
+							simple pour les équipes européennes, américaines et
+							internationales.
+						</p>
+
+						<p class="company-description">
+							<span class="cloudy">NIP:</span> 5214005049,
+							<span class="cloudy">REGON::</span> 524423574,
+							<span class="cloudy">VAT/VAT-EU::</span>
+							PL5214005049
+						</p>
+
+						<div class="company-links">
+							<a
+								class="company-link"
+								href="https://myelophone.eu"
+								target="_blank"
+							>
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<circle cx="12" cy="12" r="9" />
+									<path
+										d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"
+									/>
+								</svg>
+								myelophone.eu
+							</a>
+
+							<a
+								class="company-link"
+								href="https://myelophone.pl"
+								target="_blank"
+							>
+								<svg viewBox="0 0 24 24" aria-hidden="true">
+									<circle cx="12" cy="12" r="9" />
+									<path
+										d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"
+									/>
+								</svg>
+								myelophone.pl
+							</a>
+						</div>
+					</div>
+				</article>
+			</section>
+
+			<section class="section" aria-labelledby="faq-title" id="faq">
+				<h2 class="section-title" id="faq-title">
+					FAQ — ce qu’il faut savoir sur moi
+				</h2>
+
+				<div class="faq">
+					<div
+						class="faq-tabs"
+						role="tablist"
+						aria-label="Thèmes de la FAQ"
+					>
+						<button
+							class="faq-tab"
+							id="faq-tab-about"
+							type="button"
+							role="tab"
+							aria-selected="true"
+							aria-controls="faq-panel-about"
+						>
+							À propos de moi
+						</button>
+
+						<button
+							class="faq-tab"
+							id="faq-tab-work"
+							type="button"
+							role="tab"
+							aria-selected="false"
+							aria-controls="faq-panel-work"
+						>
+							Collaboration
+						</button>
+
+						<button
+							class="faq-tab"
+							id="faq-tab-process"
+							type="button"
+							role="tab"
+							aria-selected="false"
+							aria-controls="faq-panel-process"
+						>
+							Projets et produits
+						</button>
+					</div>
+
+					<div
+						class="faq-panel"
+						id="faq-panel-about"
+						role="tabpanel"
+						aria-labelledby="faq-tab-about"
+					>
+						<div class="faq-list">
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="true"
+								>
+									<span>Qui est Aleks Ivanou ?</span>
+									<span
+										class="faq-question-icon"
+										aria-hidden="true"
+									></span>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											C'est moi :) Aleks Ivanou
+											(@aleksivanou), le nom complet est
+											Aliaksandr Ivanou (je viens de
+											Biélorussie), un développeur Web
+											full stack senior, avec une
+											expertise dans la création de sites
+											Web, de services Web et
+											d'applications Web modernes,
+											évolutifs et maintenables.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Pourquoi me choisir comme développeur
+										?</span
+									>
+									<span
+										class="faq-question-icon"
+										aria-hidden="true"
+									></span>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Je rassemble l'expérience, la
+											créativité et la solide technique de
+											résolution de problèmes. Je
+											construis un complexe, des solutions
+											évolutives axées sur la performance,
+											l'optimisation, la propreté de
+											l'architecture et l'excellente
+											expérience utilisateur.
+										</p>
+									</div>
+								</div>
+							</article>
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span>Où est-ce que je travaille ?</span>
+									<span
+										class="faq-question-icon"
+										aria-hidden="true"
+									></span>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Je suis basé à Varsovie, en Pologne
+											(UE), et travaille avec des clients
+											du monde entier. Je collabore
+											également à distance avec des
+											entreprises, startups, projets B2B,
+											et des équipes dans différents pays
+											et les fuseaux horaires.
+										</p>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+
+					<div
+						class="faq-panel"
+						id="faq-panel-process"
+						role="tabpanel"
+						aria-labelledby="faq-tab-process"
+						hidden
+					>
+						<div class="faq-list">
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="true"
+								>
+									<span
+										>Aleks Ivanou — développeur web
+										full-stack</span
+									>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Je suis un développeur full-stack
+											senior qui aime résoudre des
+											problèmes complexes, défis
+											techniques, démêlage architectures
+											désordonnées et apportant des idées
+											ambitieuses à la vie.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Aleks Ivanou — fondateur et
+										propriétaire de la marque
+										MyelophOne</span
+									>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Fondateur et propriétaire de
+											MyelophOne (@myeloph.one) - Web
+											créatif développement axé sur le
+											moderne sites Web, produits
+											numériques et développement web
+											personnalisé.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Aleks Ivanou — développeur d’extensions
+										Chrome</span
+									>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Je crée et développe Chrome
+											extensions et outils de navigateur,
+											de utilitaires de productivité
+											légers vers des solutions
+											personnalisées plus avancées (tels
+											que OneClick New Window et Cookie
+											Knight), disponibles dans le Chrome
+											Web Store.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Aleks Ivanou — développeur d’extensions
+										Firefox</span
+									>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Je crée et développe du Firefox des
+											extensions et outils
+											multi-navigateurs personnalisés, y
+											compris la productivité,
+											l'automatisation, et des solutions
+											utilitaires (telles que Cookie
+											Knight), disponibles dans le Mozilla
+											Add-ons Store.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Aleks Ivanou — développeur
+										WordPress</span
+									>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Je crée et développe sur mesure
+											Plugins WordPress axés sur
+											performances, SEO, automatisation et
+											fonctionnalité pratique du site Web
+											(tels que MyelophOne Core et
+											MyelophOne SEO), disponible sur
+											WordPress.org.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Aleks Ivanou — développeur de
+										@myelophone/nuxt</span
+									>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Je crée et développe du front-end
+											composants et solution personnalisée
+											en utilisant Nuxt.js, axé sur la
+											performance, SEO et expérience
+											utilisateur.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Aleks Ivanou — développeur de
+										@myelophone/goserver</span
+									>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Je crée et développe du service
+											back-end et une solution
+											personnalisée en utilisant Go, axé
+											sur la performance, l'évolutivité et
+											la sécurité.
+										</p>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+
+					<div
+						class="faq-panel"
+						id="faq-panel-work"
+						role="tabpanel"
+						aria-labelledby="faq-tab-work"
+						hidden
+					>
+						<div class="faq-list">
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="true"
+								>
+									<span>Comment me contacter ?</span>
+									<span
+										class="faq-question-icon"
+										aria-hidden="true"
+									></span>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Vous pouvez me contacter directement
+											via le formulaire de contact sur ce
+											site Web ou par email. Envoyer une
+											brève description de votre projet,
+											de vos objectifs et type de
+											collaboration préféré, et je te
+											reviendrai avec les prochaines
+											étapes.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Suis-je disponible pour une
+										collaboration ?</span
+									>
+									<span
+										class="faq-question-icon"
+										aria-hidden="true"
+									></span>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Oui. Je suis ouvert à ce qui est
+											intéressant des projets et du long
+											terme opportunités, sous réserve de
+											mon état actuel d'engagements et
+											tout ce qui est requis période de
+											transition.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Suis-je disponible pour des missions à
+										temps partiel ?</span
+									>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Oui. Je suis ouvert à temps partiel
+											engagements, projets en cours et des
+											collaborations flexibles, en
+											fonction sur mes engagements
+											actuels.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Est-ce que je travaille en B2B ?</span
+									>
+									<span
+										class="faq-question-icon"
+										aria-hidden="true"
+									></span>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Oui. Je travaille (en tant que
+											polonais JDG) avec des entreprises
+											et des clients sur une base B2B, y
+											compris le travail basé sur des
+											projets, un développement continu et
+											des collaborations à long terme.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article class="faq-item">
+								<button
+									class="faq-question"
+									type="button"
+									aria-expanded="false"
+								>
+									<span
+										>Comment pouvons-nous travailler
+										ensemble ?</span
+									>
+									<span
+										class="faq-question-icon"
+										aria-hidden="true"
+									></span>
+								</button>
+								<div class="faq-answer">
+									<div class="faq-answer-inner">
+										<p>
+											Nous pouvons travailler ensemble sur
+											un projet de base fixe, un package
+											de développement, un engagement
+											continu à temps partiel, ou une
+											collaboration B2B à plus long terme,
+											en fonction de vos besoins.
+										</p>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="about-feature-title">
+				<h4 class="section-title" id="about-feature-title">
+					Mon approche du développement — Necessariam et Sufficientem
+				</h4>
+
+				<div class="about-feature">
+					<div class="about-feature-copy">
+						<div>
+							<p class="about-feature-kicker">
+								Necessariam et Sufficientem (NetS)
+							</p>
+							<h5 class="about-feature-title">
+								Fort de mon expérience
+							</h5>
+						</div>
+
+						<p class="about-feature-text">
+							En mathématiques supérieures, une preuve n'est
+							complète que lorsque les conditions sont à la fois
+							nécessaires et suffisantes (Necessariam et
+							Sufficientem) — rien ne manque, rien de redondant.
+							J'applique le même principe à développement : offrir
+							des fonctionnalités robustes, propres architecture
+							et des performances transparentes sans le code
+							gonflé ou surcharge excessive qui gonfle les
+							budgets.
+						</p>
+					</div>
+
+					<figure class="about-feature-image">
+						<img
+							src="/assets/img/skin.jpg"
+							width="720"
+							height="900"
+							alt="Necessariam et Sufficientem (NetS) - Aliaksandr Ivanou"
+							loading="lazy"
+							decoding="async"
+							fetchpriority="low"
+						/>
+					</figure>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="form-title">
+				<h3 class="section-title" id="form-title">Me contacter</h3>
+
+				<div class="desc-card">
+					<div
+						class="contact-card contact-card--form"
+						id="contact-form-root"
+					>
+						<div class="contact-intro">
+							<p class="eyebrow">Commençons</p>
+							<h3>
+								Vous avez un projet ou recherchez un développeur
+								?
+							</h3>
+							<p>
+								Vous planifiez un nouveau projet ou recherchez
+								un développeur senior ? Envoyez un message sur
+								ce que vous construisez, vos bloqueurs actuels
+								et vos objectifs concrets.<i>#OpenToWork</i>
+							</p>
+						</div>
+
+						<form
+							class="contact-form"
+							id="contactForm"
+							action=""
+							method="post"
+							enctype="multipart/form-data"
+						>
+							<div class="form-row">
+								<label class="form-field">
+									<span
+										>Comment dois-je vous appeler ? Votre
+										nom</span
+									>
+									<input
+										name="name"
+										type="text"
+										autocomplete="name"
+										maxlength="80"
+										placeholder="Comment vous appelez-vous ?"
+										required
+									/>
+								</label>
+								<label class="form-field">
+									<span
+										>Comment puis-je vous répondre ?
+										Identifiant, e-mail ou téléphone</span
+									>
+									<input
+										name="contact"
+										type="text"
+										autocomplete="email"
+										maxlength="120"
+										placeholder="Telegram, WhatsApp, email..."
+										required
+									/>
+								</label>
+							</div>
+
+							<label class="form-field">
+								<span>Que souhaitez-vous créer ?</span>
+								<textarea
+									name="message"
+									rows="6"
+									minlength="20"
+									maxlength="3000"
+									placeholder="Votre idée, votre proposition ou simplement un message…"
+									required
+								></textarea>
+							</label>
+
+							<label
+								class="form-field form-field--trap"
+								aria-hidden="true"
+							>
+								<span>Site Web</span>
+								<input
+									name="website"
+									type="text"
+									tabindex="-1"
+									autocomplete="off"
+								/>
+							</label>
+							<input
+								name="startedAt"
+								id="contactStartedAt"
+								type="hidden"
+							/>
+
+							<div class="form-footer">
+								<p>
+									Vos coordonnées sont utilisées uniquement
+									pour répondre à cette demande.
+								</p>
+								<button class="primary-button" type="submit">
+									<span class="button-label"
+										>Envoyer la demande</span
+									>
+									<span aria-hidden="true">↗</span>
+								</button>
+							</div>
+							<p
+								class="form-status"
+								id="contactStatus"
+								role="status"
+								aria-live="polite"
+							></p>
+						</form>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="resume-card">
+					<span class="resume-icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24">
+							<path d="M7 3h7l4 4v14H7V3Z" />
+							<path
+								d="M14 3v5h5M12 11v6M9.5 14.5 12 17l2.5-2.5"
+							/>
+						</svg>
+					</span>
+
+					<div>
+						<p class="resume-title">
+							Aliaksandr Ivanou · Développeur Web · CV
+						</p>
+						<p class="resume-meta">
+							PDF · version actuelle de mon CV
+						</p>
+					</div>
+
+					<a
+						class="resume-download"
+						href="https://drive.google.com/file/d/1oXvdTP54j1xfNP1F4DL6PO0OhW0pKEXa/view?usp=sharing"
+						target="_blank"
+						rel="noopener noreferrer"
+						>Télécharger PDF</a
+					>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="contact-title">
+				<h4 class="section-title" id="contact-title">
+					Vous avez un projet ou recherchez un développeur ?
+				</h4>
+
+				<div class="contact-card">
+					<div>
+						<h5 class="contact-title">
+							Vous avez une mission, une idée ou un poste à
+							pourvoir ?
+						</h5>
+						<p class="contact-description">
+							Partagez quelques lignes sur votre projet ou offre,
+							et je vous contacterai sous peu.
+						</p>
+					</div>
+
+					<a class="contact-button" href="#contact-form-root"
+						>Contactez-moi</a
+					>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="share-title">
+				<h4 class="section-title" id="share-title">
+					Partagez cette page avec votre réseau
+				</h4>
+
+				<div class="share">
+					<p class="share-intro">
+						Vous recherchez un développeur ou connaissez quelqu'un
+						qui l'est ? Que ce soit c'est construire un nouveau
+						projet ou rejoindre une équipe, n'hésitez pas à partager
+						cette page avec tous ceux qui recherchent un développeur
+						fiable de talent. Vous pourriez simplement aider un
+						collègue à trouver la bonne personne pour son équipe.
+					</p>
+
+					<div class="share-actions">
+						<a
+							class="share-button"
+							data-share="telegram"
+							href="#"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<path
+									d="m21 4-3 16-6-4-4 3 1-5 8-7-10 6-4-2 18-7Z"
+								/>
+							</svg>
+							<span>Telegram</span>
+						</a>
+
+						<a
+							class="share-button"
+							data-share="linkedin"
+							href="#"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<rect
+									x="4"
+									y="9"
+									width="3"
+									height="11"
+									rx="1"
+								/>
+								<circle cx="5.5" cy="5.5" r="1.5" />
+								<path
+									d="M11 20V9h3v1.8c1-1.5 2.3-2.2 4-2.2 2.7 0 4 1.8 4 5.1V20h-3v-5.7c0-1.9-.7-2.9-2.2-2.9-1.7 0-2.8 1.2-2.8 3.4V20h-3Z"
+								/>
+							</svg>
+							<span>LinkedIn</span>
+						</a>
+
+						<a
+							class="share-button"
+							data-share="whatsapp"
+							href="#"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<path
+									d="M20 11.8A8 8 0 0 1 8.1 19l-4.1 1 1.1-4A8 8 0 1 1 20 11.8Z"
+								/>
+								<path
+									d="M9 8.5c.4 2.8 2.2 4.6 5 5l1.2-1.2c.2-.2.5-.2.8-.1l2 1"
+								/>
+							</svg>
+							<span>WhatsApp</span>
+						</a>
+
+						<a
+							class="share-button"
+							data-share="x"
+							href="#"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<path d="M5 4l14 16M19 4 5 20" />
+							</svg>
+							<span>X.com</span>
+						</a>
+
+						<a
+							class="share-button"
+							data-share="facebook"
+							href="#"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<svg viewBox="0 0 24 24" aria-hidden="true">
+								<path
+									d="M14 21v-8h3l.5-3H14V8.2c0-1 .4-1.7 1.8-1.7H18V3.8c-.7-.1-1.5-.2-2.4-.2-2.8 0-4.6 1.7-4.6 4.8V10H8v3h3v8"
+								/>
+							</svg>
+							<span>Facebook</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<footer class="content-footer">
+				<span>©<time datetime="2026">2026</time>Aliaksandr Ivanou</span>
+
+				<div class="footer-languages">
+					<a href="/">EN</a>
+					<a href="/pl/">PL</a>
+					<a href="/ru/">RU</a>
+					<a href="/de/">DE</a>
+					<a href="/es/">ES</a>
+					<a href="/fr/">FR</a>
+					<a href="/it/">IT</a>
+					<a href="/pt/">PT</a>
+					<a href="/ja/">JA</a>
+				</div>
+
+				<button
+					class="back-to-top"
+					id="backToTop"
+					type="button"
+					aria-label="Faire défiler vers le haut"
+				>
+					Vers le haut
+				</button>
+			</footer>
+		</main>
+
+		<aside
+			class="privacy-toast"
+			id="privacyToast"
+			data-nosnippet
+			aria-labelledby="privacyToastTitle"
+		>
+			<div class="privacy-toast-copy">
+				<p class="privacy-toast-title" id="privacyToastTitle">
+					Je respecte votre vie privée
+				</p>
+
+				<p class="privacy-toast-text">
+					Seules les mesures de sites Web respectueuses de la vie
+					privée sont enregistrées, sans cookies ou suivi.
+				</p>
+			</div>
+
+			<div class="privacy-toast-actions">
+				<button
+					class="privacy-toast-button"
+					id="privacyToastDismiss"
+					type="button"
+				>
+					Confirmer
+				</button>
+			</div>
+		</aside>
+
+		<div
+			class="win-message"
+			id="winMessage"
+			role="status"
+			aria-live="polite"
+		>
+			Vous gagnez !
+		</div>
+		<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+		<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+		<button
+			class="scroll-compass"
+			id="scrollCompass"
+			type="button"
+			aria-label="Faire défiler vers le haut"
+		></button>
+
+		<script src="/assets/js/scripts.js" defer></script>
+		<script
+			defer
+			src="https://stat.meph.one/script.js"
+			data-website-id="b7fc784a-cdd4-49d0-897f-b8a20db7c2a6"
+		></script>
+	</body>
+</html>

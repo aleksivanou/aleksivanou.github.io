@@ -1,0 +1,41 @@
+name: Build dist branch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dist-deployment
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Minify CSS and JavaScript
+        run: |
+          npx --yes clean-css-cli@5.6.3 -o assets/css/styles.css assets/css/styles.css
+          npx --yes terser@5.49.2 assets/js/scripts.js --compress --mangle --output assets/js/scripts.js
+          node --check assets/js/scripts.js
+      - name: Publish exact site tree to dist
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git add --all
+          tree=$(git write-tree)
+          commit=$(printf 'Build dist from %s\n' "$GITHUB_SHA" | git commit-tree "$tree")
+          git push --force origin "$commit:refs/heads/dist"
