@@ -1263,7 +1263,7 @@ svg {
 .extensions-subtitle {
 	margin: 0.25rem 0 0;
 	color: var(--muted);
-	font-size: 0.75rem;
+	font-size: 0.875rem;
 }
 .extensions-more {
 	display: inline-flex;
@@ -1332,7 +1332,7 @@ svg {
 	object-fit: cover;
 }
 .extension-icon-fallback {
-	font-size: 0.75rem;
+	font-size: 0.875rem;
 	font-weight: 600;
 }
 .extension-title {
@@ -1666,7 +1666,7 @@ svg {
 .site-preview-text {
 	margin: 0.5rem 0 0;
 	color: rgb(255 255 255 / 76%);
-	font-size: 0.75rem;
+	font-size: 0.875rem;
 	opacity: 0;
 	transition: opacity 220ms ease 80ms;
 }
@@ -1718,7 +1718,7 @@ svg {
 .contact-description {
 	margin: 0.25rem 0 0;
 	color: var(--muted);
-	font-size: 0.75rem;
+	font-size: 0.875rem;
 }
 .contact-button {
 	display: inline-flex;
@@ -2305,7 +2305,6 @@ svg {
 		flex-direction: column;
 	}
 	.contact-button {
-		width: 100%;
 		justify-content: center;
 	}
 	.content-footer {
@@ -2319,6 +2318,15 @@ svg {
 	}
 	[data-share='x'] {
 		display: none;
+	}
+	.not-found-visual,
+	.not-found-actions {
+		justify-content: center;
+	}
+	.not-found-kicker,
+	.not-found-title,
+	.not-found-copy {
+		text-align: center;
 	}
 }
 @media (max-height: 43.75rem) and (min-width: 51.3125rem) {
