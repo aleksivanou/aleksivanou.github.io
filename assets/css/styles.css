@@ -68,6 +68,7 @@ body {
 	transition:
 		color 220ms ease,
 		background-color 220ms ease;
+	max-width: 100dvw !important;
 }
 a {
 	color: inherit;

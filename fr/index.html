@@ -3,7 +3,10 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+		/>
 
 		<title>
 			Aliaksandr Ivanou (@aleksivanou) ⚡ développeur Web créatif
@@ -744,7 +747,43 @@
 						id="themeToggle"
 						type="button"
 						aria-label="Basculer le thème"
-					></button>
+					>
+						<svg
+							class="moon-icon"
+							viewBox="0 0 24 24"
+							fill="none"
+							aria-hidden="true"
+						>
+							<path
+								d="M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z"
+								stroke="currentColor"
+								stroke-width="1.7"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+
+						<svg
+							class="sun-icon"
+							viewBox="0 0 24 24"
+							fill="none"
+							aria-hidden="true"
+						>
+							<circle
+								cx="12"
+								cy="12"
+								r="3.5"
+								stroke="currentColor"
+								stroke-width="1.7"
+							/>
+							<path
+								d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+								stroke="currentColor"
+								stroke-width="1.7"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
 
 					<a
 						class="language-link"
@@ -2561,7 +2600,23 @@
 			id="scrollCompass"
 			type="button"
 			aria-label="Faire défiler vers le haut"
-		></button>
+		>
+			<svg
+				class="scroll-compass-triangle"
+				viewBox="0 0 24 24"
+				aria-hidden="true"
+			>
+				<path d="M12 4 19 18 12 15 5 18 12 4Z" />
+			</svg>
+
+			<svg
+				class="scroll-compass-done"
+				viewBox="0 0 24 24"
+				aria-hidden="true"
+			>
+				<path d="m6 12 4 4 8-9" />
+			</svg>
+		</button>
 
 		<script src="/assets/js/scripts.js" defer></script>
 		<script
