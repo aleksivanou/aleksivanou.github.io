@@ -2024,7 +2024,7 @@ svg {
 .privacy-toast-text {
 	margin: 0.35rem 0 0;
 	color: var(--muted);
-	font-size: 0.85rem;
+	font-size: 0.8rem;
 	line-height: 1.55;
 }
 .privacy-toast-text a {
