@@ -8,9 +8,7 @@
 			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 		/>
 
-		<title>
-			Aliaksandr Ivanou ⚡ développeur full stack
-		</title>
+		<title>Aliaksandr Ivanou ⚡ développeur full stack</title>
 		<meta
 			name="description"
 			content="Site personnel du développeur full stack Aleks Ivanou (@aleksivanou). Développement web de bout en bout pour des besoins métier de toute complexité : de l’architecture au déploiement. Fondateur de MyelophOne. Parlons de votre projet ! #OpenToWork #MyelophOne #aleksivanou"
@@ -368,7 +366,6 @@
 						"@type": "Person",
 						"@id": "https://aleksivanov.me/#person",
 						"name": "Aliaksandr Ivanou",
-						"alternateName": "@aleksivanou",
 						"url": "https://aleksivanov.me/",
 						"image": "https://aleksivanov.me/assets/img/portrait-positive-calm.jpg",
 						"jobTitle": "développeur full stack",
@@ -389,10 +386,24 @@
 							"https://tenchat.ru/aleksivanou",
 							"https://vk.com/aleksivanou"
 						],
-						"founder": {
-							"@type": "Organization",
-							"name": "MyelophOne",
-							"url": "https://myeloph.one"
+						"owns": {
+							"@id": "https://myeloph.one/#organization"
+						},
+						"worksFor": {
+							"@id": "https://myeloph.one/#organization"
+						},
+						"hasOccupation": {
+							"@type": "Occupation",
+							"name": "CEO, MyelophOne"
+						},
+						"knowsLanguage": ["ru", "en", "be", "pl", "de"],
+						"homeLocation": {
+							"@type": "City",
+							"name": "Warsaw",
+							"containedInPlace": {
+								"@type": "Country",
+								"name": "Poland"
+							}
 						},
 						"knowsAbout": [
 							"Nuxt.js",
@@ -439,6 +450,7 @@
 							"HTML5 / CSS3"
 						],
 						"alternateName": [
+							"@aleksivanou",
 							"Aleks Ivanou",
 							"Alex Ivanou",
 							"Aliaksandr Ivanou",
@@ -477,8 +489,24 @@
 						"name": "MyelophOne",
 						"url": "https://myeloph.one",
 						"legalName": "Aliaksandr Ivanou",
+						"description": "Creative web studio",
+						"logo": "https://aleksivanov.me/assets/img/myelophone.jpg",
+						"email": "mailto:studio@myeloph.one",
+						"foundingDate": "2020-05-26",
+						"sameAs": [
+							"https://github.com/MyelophOne",
+							"https://myelophone.eu/",
+							"https://myelophone.pl/"
+						],
+						"taxID": "5214005049",
+						"vatID": "PL5214005049",
+						"identifier": {
+							"@type": "PropertyValue",
+							"propertyID": "REGON",
+							"value": "524423574"
+						},
 						"founder": {
-							"@id": "https://aleksivanov.me"
+							"@id": "https://aleksivanov.me/#person"
 						},
 						"brand": {
 							"@type": "Brand",
@@ -501,20 +529,154 @@
 					{
 						"@context": "https://schema.org",
 						"@type": "WebSite",
-						"name": "MyelophOne",
-						"alternateName": [
-							"@aleksivanou",
-							"@aleksivanov.me",
-							"aleksivanov.me",
-							"Myelophone fondateur et propriétaire",
-							"Myeloph.One fondateur et propriétaire",
-							"Meph.One fondateur et propriétaire",
-							"Meloph.One fondateur et propriétaire"
+						"@id": "https://aleksivanov.me/#website",
+						"name": "Aleks Ivanou",
+						"alternateName": ["aleksivanov.me", "@aleksivanou"],
+						"inLanguage": [
+							"en",
+							"pl",
+							"ru",
+							"de",
+							"es",
+							"fr",
+							"it",
+							"pt",
+							"ja"
 						],
-						"url": "https://aleksivanov.me/fr/",
+						"url": "https://aleksivanov.me/",
 						"publisher": {
 							"@id": "https://aleksivanov.me/#person"
 						}
+					},
+					{
+						"@type": "ProfilePage",
+						"@id": "https://aleksivanov.me/fr/#profile",
+						"url": "https://aleksivanov.me/fr/",
+						"inLanguage": "fr",
+						"mainEntity": {
+							"@id": "https://aleksivanov.me/#person"
+						},
+						"isPartOf": {
+							"@id": "https://aleksivanov.me/#website"
+						}
+					},
+					{
+						"@type": "ItemList",
+						"@id": "https://aleksivanov.me/#software-projects",
+						"name": "MyelophOne open-source projects",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@type": "SoftwareSourceCode",
+									"@id": "https://github.com/MyelophOne/nuxt#software",
+									"name": "@myelophone/nuxt",
+									"codeRepository": "https://github.com/MyelophOne/nuxt",
+									"programmingLanguage": [
+										"TypeScript",
+										"JavaScript"
+									],
+									"author": {
+										"@id": "https://aleksivanov.me/#person"
+									},
+									"sourceOrganization": {
+										"@id": "https://myeloph.one/#organization"
+									}
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@type": "SoftwareSourceCode",
+									"@id": "https://github.com/MyelophOne/nuxt-template#software",
+									"name": "@myelophone/nuxt-template",
+									"codeRepository": "https://github.com/MyelophOne/nuxt-template",
+									"programmingLanguage": [
+										"TypeScript",
+										"JavaScript"
+									],
+									"author": {
+										"@id": "https://aleksivanov.me/#person"
+									},
+									"sourceOrganization": {
+										"@id": "https://myeloph.one/#organization"
+									}
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 3,
+								"item": {
+									"@type": "SoftwareSourceCode",
+									"@id": "https://github.com/MyelophOne/goserver#software",
+									"name": "@myelophone/goserver",
+									"codeRepository": "https://github.com/MyelophOne/goserver",
+									"programmingLanguage": "Go",
+									"author": {
+										"@id": "https://aleksivanov.me/#person"
+									},
+									"sourceOrganization": {
+										"@id": "https://myeloph.one/#organization"
+									}
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 4,
+								"item": {
+									"@type": "SoftwareSourceCode",
+									"@id": "https://github.com/MyelophOne/goserver-template#software",
+									"name": "@myelophone/goserver-template",
+									"codeRepository": "https://github.com/MyelophOne/goserver-template",
+									"programmingLanguage": "Go",
+									"author": {
+										"@id": "https://aleksivanov.me/#person"
+									},
+									"sourceOrganization": {
+										"@id": "https://myeloph.one/#organization"
+									}
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 5,
+								"item": {
+									"@type": "SoftwareSourceCode",
+									"@id": "https://github.com/MyelophOne/vite-plugin-purgecss#software",
+									"name": "vite-plugin-purgecss",
+									"codeRepository": "https://github.com/MyelophOne/vite-plugin-purgecss",
+									"programmingLanguage": [
+										"TypeScript",
+										"JavaScript"
+									],
+									"author": {
+										"@id": "https://aleksivanov.me/#person"
+									},
+									"sourceOrganization": {
+										"@id": "https://myeloph.one/#organization"
+									}
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 6,
+								"item": {
+									"@type": "SoftwareSourceCode",
+									"@id": "https://github.com/MyelophOne/cookies-psr7#software",
+									"name": "cookies-psr7",
+									"codeRepository": "https://github.com/MyelophOne/cookies-psr7",
+									"programmingLanguage": "PHP",
+									"author": {
+										"@id": "https://aleksivanov.me/#person"
+									},
+									"sourceOrganization": {
+										"@id": "https://myeloph.one/#organization"
+									}
+								}
+							}
+						]
 					},
 					{
 						"@type": "FAQPage",
