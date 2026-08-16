@@ -28,6 +28,20 @@ jobs:
           npx --yes clean-css-cli@5.6.3 -o assets/css/styles.css assets/css/styles.css
           npx --yes terser@5.49.2 assets/js/scripts.js --compress --mangle --output assets/js/scripts.js
           node --check assets/js/scripts.js
+      - name: Minify HTML
+        run: |
+          find . -type f -name '*.html' -not -path './.git/*' -print0 | while IFS= read -r -d '' file; do
+            npx --yes html-minifier-terser@7.2.0 \
+              --collapse-whitespace \
+              --remove-comments \
+              --remove-redundant-attributes \
+              --remove-script-type-attributes \
+              --remove-style-link-type-attributes \
+              --use-short-doctype \
+              --minify-css true \
+              --minify-js true \
+              -o "$file" "$file"
+          done
       - name: Publish exact site tree to dist
         env:
           GIT_AUTHOR_NAME: github-actions[bot]
