@@ -86,3 +86,7 @@ node --check assets/js/scripts.js
 ```
 
 Also check that every local asset reference resolves, every page has the correct `lang`, canonical URL and Open Graph locale, all `hreflang` sets are reciprocal, and `sitemap.xml` contains all published URLs.
+
+## Copyright
+
+Copyright © 2026 Aliaksandr Ivanou (@aleksivanou). All rights reserved.
