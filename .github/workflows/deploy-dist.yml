@@ -42,6 +42,42 @@ jobs:
               --minify-js true \
               -o "$file" "$file"
           done
+      - name: Minify JSON-LD
+        run: |
+          node <<'EOF'
+          const fs = require('node:fs');
+          const path = require('node:path');
+
+          function walk(dir) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (entry.name === '.git') continue;
+
+              const full = path.join(dir, entry.name);
+
+              if (entry.isDirectory()) {
+                walk(full);
+              } else if (entry.isFile() && entry.name.endsWith('.html')) {
+                let html = fs.readFileSync(full, 'utf8');
+
+                html = html.replace(
+                  /(<script\b[^>]*type=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi,
+                  (_, open, json, close) => {
+                    try {
+                      return open + JSON.stringify(JSON.parse(json)) + close;
+                    } catch {
+                      console.warn(`Invalid JSON-LD: ${full}`);
+                      return open + json + close;
+                    }
+                  }
+                );
+
+                fs.writeFileSync(full, html);
+              }
+            }
+          }
+
+          walk('.');
+          EOF
       - name: Publish exact site tree to dist
         env:
           GIT_AUTHOR_NAME: github-actions[bot]
