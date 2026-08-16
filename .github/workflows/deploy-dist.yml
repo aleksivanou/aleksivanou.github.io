@@ -1,0 +1,91 @@
+name: Build dist branch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dist-deployment
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Minify CSS and JavaScript
+        run: |
+          npx --yes clean-css-cli@5.6.3 -o assets/css/styles.css assets/css/styles.css
+          npx --yes terser@5.49.2 assets/js/scripts.js --compress --mangle --output assets/js/scripts.js
+          node --check assets/js/scripts.js
+      - name: Minify HTML
+        run: |
+          find . -type f -name '*.html' -not -path './.git/*' -print0 | while IFS= read -r -d '' file; do
+            npx --yes html-minifier-terser@7.2.0 \
+              --collapse-whitespace \
+              --remove-comments \
+              --remove-redundant-attributes \
+              --remove-script-type-attributes \
+              --remove-style-link-type-attributes \
+              --use-short-doctype \
+              --minify-css true \
+              --minify-js true \
+              -o "$file" "$file"
+          done
+      - name: Minify JSON-LD
+        run: |
+          node <<'EOF'
+          const fs = require('node:fs');
+          const path = require('node:path');
+
+          function walk(dir) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (entry.name === '.git') continue;
+
+              const full = path.join(dir, entry.name);
+
+              if (entry.isDirectory()) {
+                walk(full);
+              } else if (entry.isFile() && entry.name.endsWith('.html')) {
+                let html = fs.readFileSync(full, 'utf8');
+
+                html = html.replace(
+                  /(<script\b[^>]*type=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi,
+                  (_, open, json, close) => {
+                    try {
+                      return open + JSON.stringify(JSON.parse(json)) + close;
+                    } catch {
+                      console.warn(`Invalid JSON-LD: ${full}`);
+                      return open + json + close;
+                    }
+                  }
+                );
+
+                fs.writeFileSync(full, html);
+              }
+            }
+          }
+
+          walk('.');
+          EOF
+      - name: Publish exact site tree to dist
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git add --all
+          tree=$(git write-tree)
+          commit=$(printf 'Build dist from %s\n' "$GITHUB_SHA" | git commit-tree "$tree")
+          git push --force origin "$commit:refs/heads/dist"
